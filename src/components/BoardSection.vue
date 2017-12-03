@@ -2,18 +2,19 @@
   <div class="ui segment">
     <div class="ui card">
       <div class="content">
-        <div class="ui small header">Title</div>
+        <div class="ui small header">{{ task.title }}</div>
       </div>
       <div class="content">
         <div class="ui small feed">
           <div class="event">
             <div class="content">
-              <p>Point: </p>
-              <p>Assigned to: </p>
+              <p>Point: {{ task.point }}</p>
+              <p>Assigned to: {{ task.assignedTo }}</p>
             </div>
           </div>
           <br>
-          <button class="ui button">Show Detail</button>
+          <button class="ui button" @click="showDetail">Show Detail</button>
+          <ShowDetailModal :task="task"/>
         </div>
       </div>
     </div>
@@ -21,8 +22,19 @@
 </template>
 
 <script>
+  /* global $ */
+  import ShowDetailModal from '@/components/ShowDetailModal'
   export default {
-    name: 'BoardSection'
+    props: ['task'],
+    name: 'BoardSection',
+    components: {
+      ShowDetailModal
+    },
+    methods: {
+      showDetail () {
+        $('.ui.mini.modal').modal('show')
+      }
+    }
   }
 </script>
 

@@ -7,19 +7,14 @@
       <button class="ui primary button" @click="addTask">
         New Task
       </button>
-      <AddTaskModal/>
     </div>
   </div>
 </template>
 
 <script>
   /* global $ */
-  import AddTaskModal from '@/components/AddTaskModal'
   export default {
     name: 'Navbar',
-    components: {
-      AddTaskModal
-    },
     methods: {
       addTask () {
         $('.ui.tiny.modal').modal('show')

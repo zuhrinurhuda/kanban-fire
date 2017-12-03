@@ -39,6 +39,7 @@
 
 <script>
   /* global $ */
+  import { tasksRef } from '../firebase/index'
   export default {
     name: 'AddTaskModal',
     data: function () {

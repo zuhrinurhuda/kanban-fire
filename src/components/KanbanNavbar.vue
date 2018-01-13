@@ -4,17 +4,14 @@
       <h1 class="ui header">Kanban Board</h1>
     </div>
     <div class="right aligned right floated column">
-      <button class="ui primary button" @click="addTask">
-        New Task
-      </button>
+      <button class="ui primary button" @click="addTask">New Task</button>
     </div>
   </div>
 </template>
 
 <script>
-  /* global $ */
   export default {
-    name: 'Navbar',
+    name: 'KanbanNavbar',
     methods: {
       addTask () {
         $('.ui.tiny.modal').modal('show')

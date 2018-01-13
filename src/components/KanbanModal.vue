@@ -8,20 +8,20 @@
       <div class="ui form">
         <div class="field">
           <label>Title</label>
-          <input type="text" name="title" placeholder="title" v-model="newTask.title">
+          <input type="text" placeholder="title" v-model="newTask.title">
         </div>
         <div class="field">
           <label>Description</label>
-          <textarea name="description" rows="2" v-model="newTask.desc"></textarea>
+          <textarea rows="2" v-model="newTask.desc"></textarea>
         </div>
         <div class="two fields">
           <div class="field">
             <label>Point</label>
-            <input type="text" name="point" placeholder="point" v-model="newTask.point">
+            <input type="text" placeholder="point" v-model="newTask.point">
           </div>
           <div class="field">
             <label>Assigned To</label>
-            <input type="text" name="assignedTo" placeholder="assigned to" v-model="newTask.assignedTo">
+            <input type="text" placeholder="assigned to" v-model="newTask.assignedTo">
           </div>
         </div>
       </div>
@@ -38,25 +38,31 @@
 </template>
 
 <script>
-  /* global $ */
-  import { tasksRef } from '../firebase/index'
+  import { tasksRef } from '../firebase'
   export default {
-    name: 'AddTaskModal',
+    name: 'KanbanModal',
     data: function () {
       return {
         newTask: {
-          title: null,
-          desc: null,
-          point: null,
-          assignedTo: null,
-          status: null
+          title: '',
+          desc: '',
+          point: '',
+          assignedTo: '',
+          status: 'back-log'
         }
       }
     },
     methods: {
-      addTask () {
+      addTask: function () {
+        console.log(this.newTask)
         tasksRef.push(this.newTask)
-        $('.ui.tiny.modal').modal('hide')
+        this.resetModal()
+      },
+      resetModal () {
+        this.newTask.title = ''
+        this.newTask.desc = ''
+        this.newTask.point = ''
+        this.newTask.assignedTo = ''
       }
     }
   }

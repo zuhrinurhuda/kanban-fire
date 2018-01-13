@@ -10,11 +10,11 @@
             <div class="content">
               <p>Point: {{ task.point }}</p>
               <p>Assigned to: {{ task.assignedTo }}</p>
+              <!-- {{task}} -->
             </div>
           </div>
           <br>
           <button class="ui button" @click="showDetail">Show Detail</button>
-          <ShowDetailModal :task="task"/>
         </div>
       </div>
     </div>
@@ -22,21 +22,16 @@
 </template>
 
 <script>
-  /* global $ */
-  import ShowDetailModal from '@/components/ShowDetailModal'
   export default {
     props: ['task'],
-    name: 'BoardSection',
-    components: {
-      ShowDetailModal
-    },
+    name: 'KanbanCard',
     methods: {
       showDetail () {
-        $('.ui.mini.modal').modal('show')
+        // $('.ui.mini.modal').modal('show')
       }
     }
   }
 </script>
 
-<style lang="css">
+<style>
 </style>

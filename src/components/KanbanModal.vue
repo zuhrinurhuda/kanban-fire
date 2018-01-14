@@ -46,27 +46,26 @@
         newTask: {
           title: '',
           desc: '',
-          point: '',
+          point: 0,
           assignedTo: '',
-          status: 'back-log'
+          status: 0
         }
       }
     },
     methods: {
       addTask: function () {
-        console.log(this.newTask)
         tasksRef.push(this.newTask)
         this.resetModal()
       },
       resetModal () {
         this.newTask.title = ''
         this.newTask.desc = ''
-        this.newTask.point = ''
+        this.newTask.point = 0
         this.newTask.assignedTo = ''
       }
     }
   }
 </script>
 
-<style scoped>
+<style>
 </style>

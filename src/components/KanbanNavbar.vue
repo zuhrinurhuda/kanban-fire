@@ -1,9 +1,9 @@
 <template>
   <div class="row">
-    <div class="left aligned left floated column">
-      <h1 class="ui header">Kanban Board</h1>
+    <div class="left aligned ten wide column column">
+      <h1 class="ui header">Kanban Fire</h1>
     </div>
-    <div class="right aligned right floated column">
+    <div class="right aligned six wide column">
       <button class="ui primary button" @click="addTask">New Task</button>
     </div>
   </div>

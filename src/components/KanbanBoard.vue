@@ -1,11 +1,14 @@
 <template>
-  <div class="ui four column doubling stackable grid fluid container">
-    <kanban-navbar/>
-    <kanban-list :title="'Back-Log'" :tasks="backLog"></kanban-list>
-    <kanban-list :title="'To-Do'" :tasks="toDo"></kanban-list>
-    <kanban-list :title="'Doing'" :tasks="doing"></kanban-list>
-    <kanban-list :title="'Done'" :tasks="done"></kanban-list>
-    <kanban-modal/>
+  <!-- <div class="ui four column doubling stackable grid fluid container"> -->
+  <div class="ui fluid container">
+    <div class="ui grid">
+      <kanban-navbar/>
+      <kanban-list :title="'Back Log'" :tasks="backLog"></kanban-list>
+      <kanban-list :title="'To Do'" :tasks="toDo"></kanban-list>
+      <kanban-list :title="'Doing'" :tasks="doing"></kanban-list>
+      <kanban-list :title="'Done'" :tasks="done"></kanban-list>
+      <kanban-modal/>
+    </div>
   </div>
 </template>
 
@@ -35,5 +38,9 @@
   }
 </script>
 
-<style>
+<style scoped>
+  .ui.fluid.container {
+      width: 95%;
+      margin: 2rem 0;
+  }
 </style>

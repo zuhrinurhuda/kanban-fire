@@ -1,9 +1,10 @@
 import { initializeApp } from 'firebase'
 
-export const firebase = initializeApp({
+const firebase = initializeApp({
   databaseURL: 'https://kanbanfire.firebaseio.com',
   projectId: 'kanbanfire'
 })
 
-export const db = firebase.database()
-export const tasksRef = db.ref('tasks')
+const tasksRef = firebase.database().ref('tasks')
+
+export { firebase, tasksRef }
